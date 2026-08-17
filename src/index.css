@@ -1,0 +1,156 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://resource-static.bj.bcebos.com/fonts/Montserrat-VariableFont_wght.woff2');
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* RPM Motors — Premium Dark Automotive (deep charcoal + crimson/gold dual accent) */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 93%;
+    --card: 220 14% 11%;
+    --card-foreground: 0 0% 93%;
+    --popover: 220 14% 12%;
+    --popover-foreground: 0 0% 93%;
+    --primary: 0 78% 48%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 14% 16%;
+    --secondary-foreground: 0 0% 78%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 8% 52%;
+    --accent: 38 90% 52%;
+    --accent-foreground: 220 15% 8%;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 12% 18%;
+    --input: 220 13% 15%;
+    --ring: 0 78% 48%;
+    --chart-1: 0 78% 48%;
+    --chart-2: 38 90% 52%;
+    --chart-3: 142 60% 45%;
+    --chart-4: 199 80% 55%;
+    --chart-5: 280 60% 58%;
+    --sidebar-background: 220 18% 6%;
+    --sidebar-foreground: 0 0% 60%;
+    --sidebar-primary: 0 78% 48%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 14% 13%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 220 12% 13%;
+    --sidebar-ring: 0 78% 48%;
+    --success: 142 60% 45%;
+    --warning: 38 90% 52%;
+    --info: 199 80% 55%;
+    --gold: 38 90% 52%;
+    --gradient-primary: linear-gradient(135deg, hsl(0 78% 48%), hsl(0 72% 38%));
+    --gradient-gold: linear-gradient(135deg, hsl(38 90% 52%), hsl(45 95% 62%));
+    --gradient-crimson: linear-gradient(135deg, hsl(0 78% 48%) 0%, hsl(340 70% 38%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(220 14% 12%), hsl(220 14% 10%));
+    --gradient-background: linear-gradient(180deg, hsl(220 16% 7%), hsl(220 15% 8%));
+    --shadow-card: 0 1px 4px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.4);
+    --shadow-hover: 0 4px 16px rgba(0,0,0,0.6);
+    --shadow-gold: 0 0 20px rgba(210,140,30,0.15);
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 40 20% 92%;
+    --card: 220 14% 11%;
+    --card-foreground: 40 20% 92%;
+    --popover: 220 14% 12%;
+    --popover-foreground: 40 20% 92%;
+    --primary: 38 90% 52%;
+    --primary-foreground: 220 15% 8%;
+    --secondary: 220 14% 16%;
+    --secondary-foreground: 40 14% 78%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 10% 52%;
+    --accent: 0 72% 52%;
+    --accent-foreground: 40 20% 96%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 20% 96%;
+    --border: 220 12% 18%;
+    --input: 220 13% 15%;
+    --ring: 38 90% 52%;
+    --chart-1: 38 90% 52%;
+    --chart-2: 142 60% 45%;
+    --chart-3: 199 80% 55%;
+    --chart-4: 280 60% 58%;
+    --chart-5: 0 68% 55%;
+    --sidebar-background: 220 16% 6%;
+    --sidebar-foreground: 40 12% 62%;
+    --sidebar-primary: 38 90% 52%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 14% 13%;
+    --sidebar-accent-foreground: 40 20% 88%;
+    --sidebar-border: 220 12% 13%;
+    --sidebar-ring: 38 90% 52%;
+    --success: 142 60% 45%;
+    --warning: 38 90% 52%;
+    --info: 199 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-gold {
+    background-image: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(10, 12, 18, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .gold-glow {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Vehicle / Lead status utilities */
+  .status-available { @apply text-green-400 bg-green-400/10 border-green-400/20; }
+  .status-reserved  { @apply text-yellow-400 bg-yellow-400/10 border-yellow-400/20; }
+  .status-booked    { @apply text-blue-400 bg-blue-400/10 border-blue-400/20; }
+  .status-sold      { @apply text-muted-foreground bg-muted/50 border-border; }
+  .status-incoming  { @apply text-purple-400 bg-purple-400/10 border-purple-400/20; }
+  .status-archived  { @apply text-muted-foreground bg-muted/30 border-border; }
+  .status-inspection{ @apply text-orange-400 bg-orange-400/10 border-orange-400/20; }
+
+  /* Lead score */
+  .lead-hot  { @apply text-red-400 bg-red-400/10 border-red-400/20; }
+  .lead-warm { @apply text-yellow-400 bg-yellow-400/10 border-yellow-400/20; }
+  .lead-cold { @apply text-slate-400 bg-slate-400/10 border-slate-400/20; }
+}

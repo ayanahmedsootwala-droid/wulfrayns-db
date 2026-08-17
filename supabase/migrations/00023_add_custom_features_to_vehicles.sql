@@ -1,0 +1,1 @@
+ALTER TABLE vehicles ADD COLUMN IF NOT EXISTS custom_features text;
