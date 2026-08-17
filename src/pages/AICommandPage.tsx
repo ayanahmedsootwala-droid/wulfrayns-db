@@ -158,7 +158,7 @@ interface Message {
   streaming?: boolean;    // Gemini commentary phase
 }
 
-const AI_SYSTEM = `You are a helpful automotive dealer assistant for a Pakistani car dealership CRM called Wulfrayn\'s DB.
+const AI_SYSTEM = `You are a helpful automotive dealer assistant for a Pakistani car dealership CRM called Wulfrayn's DB.
 The user asked a question about their inventory and the database has returned results (shown below).
 Your job: write a SHORT, insightful 2-3 sentence commentary on the results.
 - Highlight any standout deals, pricing patterns, or actionable advice.
