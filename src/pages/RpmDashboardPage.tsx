@@ -173,7 +173,7 @@ Format with clear sections. Keep it professional and actionable.`;
       functionName: 'large-language-model',
       supabaseUrl: SUPABASE_URL, supabaseAnonKey: ANON_KEY,
       requestBody: {
-        systemInstruction: 'You are Wulfrayn's DB AI Sales Copilot generating a daily dealership manager report.',
+        systemInstruction: "You are Wulfrayn's DB AI Sales Copilot generating a daily dealership manager report.",
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
       },
       onChunk: c => setReport(p => p + c),
