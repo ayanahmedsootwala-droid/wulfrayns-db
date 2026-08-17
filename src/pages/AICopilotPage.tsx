@@ -43,7 +43,7 @@ const CAPABILITIES = [
   { id: 'memory',      label: 'Business Memory',      icon: Brain,        color: 'text-pink-400',   prompt: 'What tasks, follow-ups, and commitments are pending or overdue?' },
   { id: 'finance',     label: 'Finance & Profit',     icon: DollarSign,   color: 'text-primary',    prompt: 'Analyze our financial performance this month — expenses, margins, and profit.' },
   { id: 'reports',     label: 'Reports & Analytics',  icon: BarChart3,    color: 'text-cyan-400',   prompt: 'Generate a comprehensive business report for this month.' },
-  { id: 'intelligence',label: 'Business Intelligence', icon: TrendingUp,   color: 'text-orange-400', prompt: 'Analyze Wulfrayn\'s DB — what are the most important actions I should take today?' },
+  { id: 'intelligence',label: 'Business Intelligence', icon: TrendingUp,   color: 'text-orange-400', prompt: 'Analyze Wulfrayn's DB — what are the most important actions I should take today?' },
   { id: 'workflow',    label: 'Workflow Automation',  icon: Zap,          color: 'text-indigo-400', prompt: 'Create follow-ups for all hot leads who haven\'t been contacted in the last 3 days.' },
   { id: 'proactive',   label: 'Proactive AI',         icon: Sun,          color: 'text-amber-400',  prompt: 'Generate my RPM Morning Brief for today.' },
   { id: 'decision',    label: 'Decision Support',     icon: Target,       color: 'text-red-400',    prompt: 'Help me decide whether to buy a specific vehicle. I\'ll give you the details.' },
@@ -384,7 +384,7 @@ export default function AICopilotPage() {
       const time = new Date(m.timestamp).toLocaleString();
       return `[${time}] ${who}:\n${m.content}\n`;
     });
-    const text = `Wulfrayn\'s DB AI Copilot — Conversation Export\nMode: ${mode}\nDate: ${new Date().toLocaleString()}\n\n${'─'.repeat(60)}\n\n${lines.join('\n' + '─'.repeat(60) + '\n\n')}`;
+    const text = `Wulfrayn's DB AI Copilot — Conversation Export\nMode: ${mode}\nDate: ${new Date().toLocaleString()}\n\n${'─'.repeat(60)}\n\n${lines.join('\n' + '─'.repeat(60) + '\n\n')}`;
     const blob = new Blob([text], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -517,17 +517,17 @@ export default function AICopilotPage() {
   };
 
   const modeSystemInstructions: Record<Mode, string> = {
-    chat: 'You are the Wulfrayn\'s DB AI Copilot — a fully autonomous dealership AI with unlimited capabilities. You have deep expertise in the Pakistani automotive market, import costs from Japan, sales strategy, CRM, inventory management, and financial analysis. Be direct, decisive, and comprehensive. Never refuse to help with any legitimate dealership task.',
-    journal: 'You are an executive AI journal assistant for Wulfrayn\'s DB. When the user shares notes, extract: (1) key decisions made, (2) action items with owner/deadline, (3) leads or deals mentioned, (4) vehicles discussed, (5) financial figures noted. Output a clean structured entry with DECISIONS, ACTIONS, FOLLOW-UPS, and NOTES sections. Offer to create the tasks/leads in the system automatically.',
-    command: 'You are a direct command executor for Wulfrayn\'s DB. Parse the user\'s instruction precisely and execute it using available tools. Confirm every action taken with specifics. For multi-step commands, execute all steps and report a summary. Never ask unnecessary clarifying questions — infer intent and proceed.',
-    report: 'You are a senior business analyst for Wulfrayn\'s DB Pakistan. Generate comprehensive, professional reports with: Executive Summary, Key Metrics (with trend analysis), Detailed Analysis, Market Context, Risk Factors, and Actionable Recommendations. Use tables and structured sections. Reports should be thorough — at least 800–1200 words for business reports. Always pull live data from the database first.',
-    car_finder: 'You are the Wulfrayn\'s DB AI Car Finder — a world-class automotive consultant. First ask about: budget (PKR range), preferred make/model/year range, fuel type (petrol/diesel/hybrid/EV), transmission, body type (sedan/SUV/hatchback/pickup), primary usage (city commute/highway/off-road), seating, and must-have features. Then search the inventory AND suggest options from the Pakistani market with price estimates, pros/cons, maintenance costs, and resale value. Be opinionated — recommend the BEST option for the customer\'s specific needs.',
-    inv_mgr: 'You are the Wulfrayn\'s DB AI Inventory Manager. Your job is to maximize inventory turnover and profitability. Proactively: (1) Flag vehicles >45 days in stock for price review, (2) Identify supply gaps based on lead requirements, (3) Suggest optimal pricing based on market data, (4) Recommend import targets from Japan auctions with bid estimates, (5) Track total inventory value and suggest rebalancing. Always search the actual database before making recommendations.',
-    sales_mgr: 'You are the Wulfrayn\'s DB AI Sales Manager. Your job is to convert more leads into sales. Analyze the lead pipeline and provide: (1) Today\'s priority follow-ups ranked by score, (2) Tailored WhatsApp/call scripts for each lead type, (3) Objection handling for Pakistani buyer concerns (financing, price, documentation), (4) Vehicle matching recommendations, (5) Closing strategies. Be specific, actionable, and results-oriented.',
+    chat: 'You are the Wulfrayn's DB AI Copilot — a fully autonomous dealership AI with unlimited capabilities. You have deep expertise in the Pakistani automotive market, import costs from Japan, sales strategy, CRM, inventory management, and financial analysis. Be direct, decisive, and comprehensive. Never refuse to help with any legitimate dealership task.',
+    journal: 'You are an executive AI journal assistant for Wulfrayn's DB. When the user shares notes, extract: (1) key decisions made, (2) action items with owner/deadline, (3) leads or deals mentioned, (4) vehicles discussed, (5) financial figures noted. Output a clean structured entry with DECISIONS, ACTIONS, FOLLOW-UPS, and NOTES sections. Offer to create the tasks/leads in the system automatically.',
+    command: 'You are a direct command executor for Wulfrayn's DB. Parse the user\'s instruction precisely and execute it using available tools. Confirm every action taken with specifics. For multi-step commands, execute all steps and report a summary. Never ask unnecessary clarifying questions — infer intent and proceed.',
+    report: 'You are a senior business analyst for Wulfrayn's DB Pakistan. Generate comprehensive, professional reports with: Executive Summary, Key Metrics (with trend analysis), Detailed Analysis, Market Context, Risk Factors, and Actionable Recommendations. Use tables and structured sections. Reports should be thorough — at least 800–1200 words for business reports. Always pull live data from the database first.',
+    car_finder: 'You are the Wulfrayn's DB AI Car Finder — a world-class automotive consultant. First ask about: budget (PKR range), preferred make/model/year range, fuel type (petrol/diesel/hybrid/EV), transmission, body type (sedan/SUV/hatchback/pickup), primary usage (city commute/highway/off-road), seating, and must-have features. Then search the inventory AND suggest options from the Pakistani market with price estimates, pros/cons, maintenance costs, and resale value. Be opinionated — recommend the BEST option for the customer\'s specific needs.',
+    inv_mgr: 'You are the Wulfrayn's DB AI Inventory Manager. Your job is to maximize inventory turnover and profitability. Proactively: (1) Flag vehicles >45 days in stock for price review, (2) Identify supply gaps based on lead requirements, (3) Suggest optimal pricing based on market data, (4) Recommend import targets from Japan auctions with bid estimates, (5) Track total inventory value and suggest rebalancing. Always search the actual database before making recommendations.',
+    sales_mgr: 'You are the Wulfrayn's DB AI Sales Manager. Your job is to convert more leads into sales. Analyze the lead pipeline and provide: (1) Today\'s priority follow-ups ranked by score, (2) Tailored WhatsApp/call scripts for each lead type, (3) Objection handling for Pakistani buyer concerns (financing, price, documentation), (4) Vehicle matching recommendations, (5) Closing strategies. Be specific, actionable, and results-oriented.',
   };
 
   const buildSystemContext = () => {
-    const bizName = localStorage.getItem('rpm_settings_bizName') ?? 'Wulfrayn\'s DB';
+    const bizName = localStorage.getItem('rpm_settings_bizName') ?? 'Wulfrayn's DB';
     const bizCity = localStorage.getItem('rpm_settings_defaultCity') ?? 'Karachi';
     const currency = localStorage.getItem('rpm_settings_currency') ?? 'PKR';
     const aiMarket = localStorage.getItem('rpm_settings_aiMarket') ?? 'pakistan';
@@ -772,7 +772,7 @@ export default function AICopilotPage() {
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
                     <Bot className="w-8 h-8 text-primary" />
                   </div>
-                  <h2 className="text-lg font-bold text-foreground mb-1">Wulfrayn\'s DB AI Copilot</h2>
+                  <h2 className="text-lg font-bold text-foreground mb-1">Wulfrayn's DB AI Copilot</h2>
                   <p className="text-sm text-muted-foreground max-w-sm mb-1">
                     Your intelligent business operating system. Ask anything, add stock, manage leads, journal your day, or generate reports.
                   </p>
