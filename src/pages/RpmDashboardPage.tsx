@@ -155,7 +155,7 @@ export default function RpmDashboardPage() {
   const generateDailyReport = () => {
     setReportLoading(true); setReport('');
     abortRef.current = new AbortController();
-    const prompt = `Generate a concise daily manager report for Wulfrayn\'s DB dealership.
+    const prompt = `Generate a concise daily manager report for Wulfrayn's DB dealership.
 Date: ${new Date().toLocaleDateString('en-PK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
 ${stats ? `
 Stats:
@@ -173,7 +173,7 @@ Format with clear sections. Keep it professional and actionable.`;
       functionName: 'large-language-model',
       supabaseUrl: SUPABASE_URL, supabaseAnonKey: ANON_KEY,
       requestBody: {
-        systemInstruction: 'You are Wulfrayn\'s DB AI Sales Copilot generating a daily dealership manager report.',
+        systemInstruction: 'You are Wulfrayn's DB AI Sales Copilot generating a daily dealership manager report.',
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
       },
       onChunk: c => setReport(p => p + c),
@@ -205,7 +205,7 @@ Format with clear sections. Keep it professional and actionable.`;
               Good {new Date().getHours() < 12 ? 'Morning' : new Date().getHours() < 17 ? 'Afternoon' : 'Evening'} 👋
             </h1>
             <p className="text-sm text-muted-foreground">
-              {new Date().toLocaleDateString('en-PK', { weekday: 'long', month: 'long', day: 'numeric' })} · Wulfrayn\'s DB Dashboard
+              {new Date().toLocaleDateString('en-PK', { weekday: 'long', month: 'long', day: 'numeric' })} · Wulfrayn's DB Dashboard
             </p>
           </div>
           <Button size="sm" variant="outline" className="gap-1.5 h-8 text-xs shrink-0" onClick={loadStats} disabled={loading}>
