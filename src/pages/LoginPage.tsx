@@ -8,7 +8,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
 
 // Fixed account email — hidden from user, used internally
-const ACCOUNT_EMAIL = 'admin@autodesk.pk';
+const ACCOUNT_EMAIL = 'ayanahmedsootwala@gmail.com';
 
 export default function LoginPage() {
   const { user, signIn, loading } = useAuth();
